@@ -17,6 +17,7 @@ public class Service {
         sql = "INSERT INTO STUDENTS " + "VALUES(4,'Jalex','Mercer',23,'London')";
         statement.executeUpdate(sql);
     }
+
     public static void allUsers(Statement statement) throws SQLException {
         String sql = "SELECT id, first_name, second_name, age,city FROM STUDENTS";
         ResultSet result = statement.executeQuery(sql);
@@ -84,7 +85,7 @@ public class Service {
                     ", first name : " + first_name +
                     ", second name : " + second_name +
                     ", city: " + city +
-            "\n");
+                    "\n");
         }
     }
 

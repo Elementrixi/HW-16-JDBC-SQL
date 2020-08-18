@@ -1,6 +1,9 @@
 package main.java.com.alpashaev.executor;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import static java.util.jar.Pack200.Packer.PASS;
 import static main.java.com.alpashaev.database.Database.*;
