@@ -1,4 +1,4 @@
-package main.java.com.alpashaev.database;
+package com.alpashaev.database;
 
 
 public class Database {

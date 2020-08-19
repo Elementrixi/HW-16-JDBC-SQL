@@ -1,4 +1,7 @@
-package main.java.com.alpashaev.executor;
+package com.alpashaev.executor;
+
+import com.alpashaev.database.Database;
+import com.alpashaev.service.Service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,16 +9,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import static java.util.jar.Pack200.Packer.PASS;
-import static main.java.com.alpashaev.database.Database.*;
-import static main.java.com.alpashaev.service.Service.*;
 
 public class Executor {
     public static void startApp() {
         Connection conn = null;
         Statement stmt = null;
         try {
-            Class.forName(JDBC_DRIVER);
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            Class.forName(Database.JDBC_DRIVER);
+            conn = DriverManager.getConnection(Database.DB_URL, Database.USER, PASS);
             stmt = conn.createStatement();
             String sql = "CREATE TABLE STUDENTS " +
                     "(id INTEGER not NULL, " +
@@ -24,12 +25,12 @@ public class Executor {
                     " age INTEGER, " +
                     " city VARCHAR(255))";
             stmt.executeUpdate(sql);
-            inserts(stmt);
-            allUsers(stmt);
-            sortByAge(stmt);
-            numberOfUsers(stmt);
-            findByFirstCharacter(stmt);
-            deleteByAge(stmt);
+            Service.inserts(stmt);
+            Service.allUsers(stmt);
+            Service.sortByAge(stmt);
+            Service.numberOfUsers(stmt);
+            Service.findByFirstCharacter(stmt);
+            Service.deleteByAge(stmt);
             stmt.close();
             conn.close();
 
