@@ -1,11 +1,10 @@
-package com.alpashaev.service;
+package com.alpashaev.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Service {
-
+public class StudentDao {
     public static void inserts(Statement statement) throws SQLException {
         String sql;
         sql = "INSERT INTO STUDENTS " + "VALUES(1" + ",'Gary','Potter',24,'Berlin')";

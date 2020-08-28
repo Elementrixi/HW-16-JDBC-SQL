@@ -1,7 +1,7 @@
 package com.alpashaev.executor;
 
+import com.alpashaev.dao.StudentDao;
 import com.alpashaev.database.Database;
-import com.alpashaev.service.Service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,12 +25,12 @@ public class Executor {
                     " age INTEGER, " +
                     " city VARCHAR(255))";
             stmt.executeUpdate(sql);
-            Service.inserts(stmt);
-            Service.allUsers(stmt);
-            Service.sortByAge(stmt);
-            Service.numberOfUsers(stmt);
-            Service.findByFirstCharacter(stmt);
-            Service.deleteByAge(stmt);
+            StudentDao.inserts(stmt);
+            StudentDao.allUsers(stmt);
+            StudentDao.sortByAge(stmt);
+            StudentDao.numberOfUsers(stmt);
+            StudentDao.findByFirstCharacter(stmt);
+            StudentDao.deleteByAge(stmt);
             stmt.close();
             conn.close();
 
